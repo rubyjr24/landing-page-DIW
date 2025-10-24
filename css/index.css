@@ -5,6 +5,10 @@ html, body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*{
     font-family: "Lexend Deca", sans-serif;
 }
 
@@ -15,6 +19,7 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: #DADADA;
 }
 
 .banner{
@@ -45,6 +50,7 @@ main{
     color: #DADADA;
     margin: 0;
     text-shadow: 5px 5px 15px rgba(218, 218, 218, .15);
+    animation: animation-title-main-banner 1s ease-out forwards;
 }
 
 .text-rainbow{
@@ -70,7 +76,7 @@ main{
     gap: 20px;
 }
 
-.banner-call-to-action button{
+.button-call-to-action{
     position: relative;
     padding: 10px 20px;
     color: #DADADA;
@@ -80,6 +86,7 @@ main{
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
+    transition: background-color 0.4s ease, transform 0.3s ease;
 }
 
 .banner-info p{
@@ -89,11 +96,19 @@ main{
     margin: 0;
 }
 
-.banner-call-to-action button:nth-child(2){
+.banner-call-to-action a:nth-child(2) > button.button-call-to-action{
     background-color: #2D1D45;
 }
 
-.section-magic-ponis{
+.button-call-to-action:hover{
+    background-color: #2D1D45;
+}
+
+.banner-call-to-action a:nth-child(2) > button.button-call-to-action:hover{
+    background-color: #7817FF;
+}
+
+.section-magic-ponis, .form{
     position: relative;
     margin: 10vh 0;
     display: flex;
@@ -159,7 +174,10 @@ main{
 
 .banner-mid{
     position: relative;
-    background-image: url("../imgs/banner.jpg");
+    background-image: linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+    ), url("../imgs/banner.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -169,7 +187,9 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    gap: 20px;
+    padding: 0 10%;
+    box-sizing: border-box;
 }
 
 .banner-mid h2{
@@ -177,14 +197,121 @@ main{
     font-size: 3rem;
     color: #DADADA;
     z-index: 10;
+    margin: 0;
 }
 
-.container-opacity{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.banner-mid p{
+    color: #DADADA;
+}
+
+.form > form{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background: linear-gradient(90deg,#181025 14%, #2D1D45 60%, #35254B 80%);
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    padding: 10% 0;
+    border-radius: 10px;
+}
+
+.flex-row{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.form h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: #DADADA;
+    margin: 0;
+}
+
+.form p{
+    color: #DADADA;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.form input[type="text"], .form input[type="email"]{
+    position: relative;
+    width: 80%;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    background-color: #DADADA;
+}
+
+.form textarea{
+    height: 20rem;
+    width: 80%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #DADADA;
+}
+
+.form > form > .flex-row{
+    width: 80%;
+}
+
+.form input[type="submit"]{
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: #DADADA;
+}
+
+@keyframes appear-left {
+    from{
+        opacity: 0;
+        clip-path: inset(100% 100% 0 0);
+    }
+    to{
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes appear-right {
+    from{
+        opacity: 0;
+        clip-path: inset(0 0 100% 100%);
+    }
+    to{
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.appear-left{
+    animation: appear-left linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.appear-right{
+    animation: appear-right linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+@keyframes animation-title-main-banner {
+    from{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }

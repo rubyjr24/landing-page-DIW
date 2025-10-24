@@ -18,8 +18,8 @@
                 <h1><span class="text-rainbow">¡My Little Pony</span><br>llega a nuestro bazar!</h1>
                 <p>Descubre la nueva colección llena de color, amistad y diversión.<br>Ven y vive la experiencia mágica con tus ponis favoritos — ¡solo por tiempo limitado!<p>
                 <div class="banner-call-to-action">
-                    <button>Comprá ahora</button>
-                    <button>Saber más</button>
+                    <a href="#form"><button class="button-call-to-action">Comprá ahora</button></a>
+                    <a href="#form"><button class="button-call-to-action">Saber más</button></a>
                 </div>
             </div>
             <img src="./imgs/alone.png" alt="">
@@ -29,32 +29,39 @@
             <div class="container-sized">
                 <h2>¡Explora la Magia de <span class="text-rainbow">My Little Pony</span> en Nuestro Bazar!</h2>
                 <div class="contaner-cards">
-                    <div class="bg-img img-33 cover"></div>
-                    <div class="bg-img img-66 ponis-meeting"></div>
+                    <div class="bg-img img-33 cover appear-left"></div>
+                    <div class="bg-img img-66 ponis-meeting appear-left"></div>
                 </div>
                 <div class="contaner-cards">
-                    <div class="bg-img img-66 ponis-meeting"></div>
-                    <div class="bg-img img-33 cover"></div>
+                    <div class="bg-img img-66 ponis-meeting appear-right"></div>
+                    <div class="bg-img img-33 cover appear-right"></div>
                 </div>
             </div>
         </div>
 
         <div class="banner-mid">
-            <div class="container-opacity"></div>
             <h2>Únete a la Magia de <span class="text-rainbow">My Little Pony</span></h2>
             <p>Sé parte del evento más colorido del año. Regístrate y recibe antes que nadie las novedades, promociones y sorpresas que tenemos preparadas para ti en el bazar.</p>
-            <button>Quiero ser parte</button>
+            <a href="#form"><button class="button-call-to-action">Quiero ser parte</button></a>
         </div>
 
-        <div class="form">
-
+        <div class="form" id="form">
+            <form class="container-sized">
+                <h2>Sé el primero en conocer las novedades</h2>
+                <p>Déjanos tus datos y sé de los primeros en descubrir la nueva colección mágica.</p>
+                <div class="flex-row">
+                    <input type="text" id="name" name="name" autocomplete="given-name" placeholder="Nombre" required>
+                    <input type="text" id="surname" name="surname" autocomplete="family-name" placeholder="Apellidos" required>
+                </div>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="Email" required>
+                <textarea name="comment" id="comment" placeholder="Comentario..." required></textarea>
+                <div class="flex-row">
+                    <input type="submit" value="Enviar" class="button-call-to-action">
+                </div>
+            </form>
         </div>
 
     </main>
-    
-    <footer>
-
-    </footer>
     
 </body>
 </html>
