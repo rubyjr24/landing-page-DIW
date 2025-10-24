@@ -146,10 +146,10 @@ main{
 }
 
 .ponis-meeting{
-    background-image: url("./imgs/ponis-meeting.jpg");
+    background-image: url("../imgs/ponis-meeting.jpg");
 }
 .cover{
-    background-image: url("./imgs/cover.jpg");
+    background-image: url("../imgs/cover.jpg");
 }
 
 .section-magic-ponis h2{
@@ -159,7 +159,7 @@ main{
 
 .banner-mid{
     position: relative;
-    background-image: url("./imgs/banner.jpg");
+    background-image: url("../imgs/banner.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
